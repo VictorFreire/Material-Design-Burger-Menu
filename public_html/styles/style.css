@@ -1,0 +1,123 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06/12/2015, 22:32:29
+    Author     : Victor
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+
+a {
+    padding: 5px 80px;
+}
+a:focus {
+    color: #333;
+    background-color: #eee;
+}
+li, a {
+    margin: 75px 0 -55px 0;
+    color: #03A9F4;
+    font: 14pt "Roboto", sans-serif;
+    font-weight: 700;
+    line-height: 1.8;
+    text-decoration: none;
+    text-transform: none;
+    list-style: none;
+    transition: .5s ease;
+    outline: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #03A9F4;
+    overflow: hidden;
+}
+
+label, label:before, label:after {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: #03A9F4;
+    width: 30px;
+    height: 5px;
+    transition: .2s ease;
+    z-index: 1;
+}
+label:before {
+    content: " ";
+    top: 10px;
+    left: 0;
+}
+label:after {
+    content: " ";
+    top: 20px;
+    left: 0;
+}
+#menu-toggle:checked + label {
+    top: 35px;
+    transform: rotate(180deg);
+    transition: transform .2s ease;
+}
+
+#menu-toggle:checked + label:before {
+    width: 20px;
+    top: -2px;
+    left: 18px;
+    transform: rotate(45deg) translateX(-5px);
+    transition: transform .2s ease;
+}
+#menu-toggle:checked + label:after {
+    width: 20px;
+    top: 2px;
+    left: 18px;
+    transform: rotate(-45deg) translateX(-5px);
+    transition: transform .2s ease;
+}
+#menu {
+    position: absolute;
+    margin: 0; padding: 0;
+    width: 110px;
+    height: 110px;
+    background-color: #fff;
+    border-bottom-right-radius: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    animation: not-checked-anim .5s ease both;
+    transition: .5s ease;
+}
+#menu-toggle:checked + label + #menu {
+    animation: checked-anim 1s ease both;
+    z-index: 0;
+}
+#menu-toggle:not(:checked) + label + #menu li {
+    pointer-events: none;
+    opacity: 0;
+    z-index: -1;
+}
+@keyframes checked-anim {
+    50% {
+        width: 3000px;
+        height: 3000px;
+        z-index: 0;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+@keyframes not-checked-anim {
+    0% {
+        width: 3000px;
+        height: 3000px;
+        z-index: 0;
+    }
+}
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    display: none;
+}

@@ -30,11 +30,36 @@ li, a {
     transition: .5s ease;
     outline: 0;
 }
+aside {
+    position: absolute;
+    color: white;
+    top: 35%;
+    right: 10%;
+    text-align: right;
+}
+h1 {
+    line-height: 0;
+    font-size: 4vw;
+    font-weight: 700;
+}
+h3 {
+    float: right;
+    line-height: .3;
+    font-size: 2.5vw;
+    font-weight: lighter;
+}
+h4 {
+    float: left;
+    margin-left: -2%;
+    font-size: 1.5vw;
+    font-weight: lighter;
+}
 
 html, body {
     margin: 0;
     padding: 0;
     background-color: #03A9F4;
+    font-family: 'Roboto', sans-serif;
     overflow: hidden;
 }
 
@@ -46,6 +71,7 @@ label, label:before, label:after {
     width: 30px;
     height: 5px;
     transition: .2s ease;
+    cursor: pointer;
     z-index: 1;
 }
 label:before {
